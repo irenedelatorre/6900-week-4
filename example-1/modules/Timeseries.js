@@ -38,7 +38,9 @@ d3.timeSeries = function(){
         console.log(_d);
 
 		var line = d3.svg.line()
-			.x(function(d){ return scaleX(d.x.getTime() + d.dx/2)})
+			.x(function(d){ return scaleX(d.x.getTime(
+
+				) + d.dx/2)})
 			.y(function(d){ return scaleY(d.y)})
 			.interpolate('basis');
 		var area = d3.svg.area()
@@ -53,8 +55,7 @@ d3.timeSeries = function(){
 
 		//append and update DOM
 		//Step 1: does <svg> element exist? If it does, update width and height; if it doesn't, create <svg>
-		var svg = d3.select(this).selectAll('svg')
-			.data([d]);
+		var svg = d3.select(this).selectAll('svg').data([d]);
 
 		var svgEnter = svg.enter().append('svg')
 		svgEnter.append('g').attr('class','area').attr('transform','translate('+m.l+','+m.t+')').append('path');
@@ -69,6 +70,7 @@ d3.timeSeries = function(){
 			.select('path')
 			.datum(_d)
 			.attr('d',line);
+
 		//2.2 area
 		svg.select('.area')
 			.select('path')

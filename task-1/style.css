@@ -1,16 +1,31 @@
 .plot{
+    width:33%;
+    height:200px;
+    float:left;
 }
 
-.guide{
+.guide {
+    fill:none;
+    stroke:rgb(100,100,100);
+    stroke-width:1px;
+}
+
+.plot .axisX {
     fill:none;
     stroke:rgb(100,100,100);
 }
 
-.area{
-    fill:rgba(200,200,200,.1);
+.plot h2{
+    position:absolute;
+    font-size:1.2em;
 }
-.line{
+
+.plot .line path{
     fill:none;
-    stroke:rgb(80,80,80);
     stroke-width:1px;
+    stroke:rgb(80,80,80);
 }
+.plot .area path{
+    fill:rgba(100,100,100,.05);
+}
+
